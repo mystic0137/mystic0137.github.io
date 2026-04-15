@@ -1,0 +1,133 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{--green:#4af08a;--dimgreen:#2a7a4a;--bg:#0d0d0d;--surface:#111;--border:#1e1e1e;--text:#e0e0e0;--muted:#666;--mono:'JetBrains Mono',monospace}
+  .wrap{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;padding:2rem 1.5rem;max-width:860px;margin:0 auto;min-height:600px}
+  .prompt{color:var(--green);font-size:12px;margin-bottom:2rem;display:flex;align-items:center;gap:8px}
+  .prompt::before{content:'>';color:var(--dimgreen)}
+  .blink{display:inline-block;width:8px;height:14px;background:var(--green);animation:blink 1s step-end infinite;vertical-align:middle}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+  .section{margin-bottom:2.5rem}
+  .sec-label{color:var(--muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+  .sec-label::after{content:'';flex:1;height:1px;background:var(--border)}
+  .hero-name{font-size:clamp(20px,4vw,32px);font-weight:500;color:#fff;line-height:1.2;margin-bottom:6px}
+  .hero-name span{color:var(--green)}
+  .hero-sub{color:var(--muted);font-size:12px;line-height:1.8;max-width:520px}
+  .hero-sub b{color:var(--text);font-weight:400}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.25rem}
+  .link-btn{border:1px solid var(--border);color:var(--muted);padding:6px 14px;font-family:var(--mono);font-size:11px;text-decoration:none;transition:all .15s;cursor:pointer;background:transparent}
+  .link-btn:hover{border-color:var(--green);color:var(--green)}
+  .link-btn.primary{border-color:var(--dimgreen);color:var(--green)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+  .card{border:1px solid var(--border);padding:1.25rem;background:var(--surface);transition:border-color .15s}
+  .card:hover{border-color:var(--dimgreen)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+  .card-title{color:#fff;font-size:14px;font-weight:500}
+  .badge{font-size:10px;padding:3px 8px;border:1px solid;font-family:var(--mono)}
+  .badge.live{border-color:var(--dimgreen);color:var(--green)}
+  .badge.wip{border-color:#555;color:var(--muted)}
+  .card-desc{color:var(--muted);font-size:12px;line-height:1.7;margin-bottom:12px}
+  .card-desc b{color:var(--text);font-weight:400}
+  .card-metric{display:inline-block;color:var(--green);font-size:11px;background:rgba(74,240,138,0.07);padding:4px 10px;margin-bottom:10px}
+  .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tag{font-size:10px;color:var(--muted);border:1px solid var(--border);padding:2px 8px}
+  .stack-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .stack-item{font-size:11px;padding:5px 12px;border:1px solid var(--border);color:var(--muted);transition:all .15s}
+  .stack-item:hover{border-color:var(--green);color:var(--green)}
+  .contact-row{display:flex;flex-wrap:wrap;gap:8px}
+  .contact-item{font-size:12px;color:var(--muted);border:1px solid var(--border);padding:6px 14px;text-decoration:none;font-family:var(--mono);transition:all .15s}
+  .contact-item:hover{border-color:var(--green);color:var(--green)}
+  .divider{height:1px;background:var(--border);margin:0.5rem 0}
+</style>
+<div class="wrap">
+  <div class="prompt">zakirulla@portfolio:~$ cat about.txt <span class="blink"></span></div>
+
+  <div class="section">
+    <div class="hero-name">Zakirulla Khan Ghouri<span>_</span></div>
+    <div class="hero-sub">
+      <b>AI Engineer</b> — VIT Chennai CS/AI grad.<br>
+      Builds production ML systems with a focus on <b>inference efficiency</b>.<br>
+      ONNX · FastAPI · RAG pipelines · LLM fine-tuning · Not demo-ware.
+    </div>
+    <div class="links">
+      <a class="link-btn primary" href="https://github.com/mystic0137" target="_blank">[ github/mystic0137 ]</a>
+      <a class="link-btn" href="mailto:zakir.ghouri.dev@gmail.com">[ email ]</a>
+      <a class="link-btn" id="dl-btn">[ resume.pdf ]</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">projects</div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-top">
+          <div class="card-title">BA Lead Engine</div>
+          <span class="badge live">live</span>
+        </div>
+        <div class="card-metric">36.2× throughput improvement</div>
+        <div class="card-desc">
+          End-to-end booking prediction system — XGBoost + RF exported to <b>ONNX</b>, served via <b>FastAPI</b> with vectorized batch inference. Threshold-optimized via Youden's J. RAG pipeline for policy email generation using <b>ChromaDB + Groq/Llama-4-Scout</b>.
+        </div>
+        <div class="tag-row">
+          <span class="tag">XGBoost</span><span class="tag">ONNX Runtime</span><span class="tag">FastAPI</span><span class="tag">ChromaDB</span><span class="tag">Sentence-Transformers</span><span class="tag">Pydantic V2</span>
+        </div>
+        <div class="links" style="margin-top:12px">
+          <a class="link-btn" href="https://github.com/mystic0137/BA_Lead_Engine" target="_blank">[ view repo ]</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-title">LLM Fine-Tuning — Nemotron</div>
+          <span class="badge wip">in progress</span>
+        </div>
+        <div class="card-desc">
+          Kaggle competition targeting improved reasoning in <b>NVIDIA Nemotron-3-Nano-30B</b>. Scope: data curation, synthetic CoT trace generation, LoRA/PEFT fine-tuning, and instruction-tuning strategies.
+        </div>
+        <div class="tag-row">
+          <span class="tag">PyTorch</span><span class="tag">LoRA / PEFT</span><span class="tag">HuggingFace</span><span class="tag">Synthetic Data</span><span class="tag">CoT</span>
+        </div>
+        <div class="links" style="margin-top:12px">
+          <a class="link-btn" href="https://github.com/mystic0137/LLMFinetuning" target="_blank">[ view repo ]</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">stack</div>
+    <div class="stack-grid">
+      <span class="stack-item">Python</span>
+      <span class="stack-item">PyTorch</span>
+      <span class="stack-item">XGBoost</span>
+      <span class="stack-item">ONNX Runtime</span>
+      <span class="stack-item">FastAPI</span>
+      <span class="stack-item">Pydantic V2</span>
+      <span class="stack-item">ChromaDB</span>
+      <span class="stack-item">Sentence-Transformers</span>
+      <span class="stack-item">PEFT / LoRA</span>
+      <span class="stack-item">Groq API</span>
+      <span class="stack-item">Scikit-learn</span>
+      <span class="stack-item">NumPy / Pandas</span>
+      <span class="stack-item">SQL</span>
+      <span class="stack-item">Git</span>
+      <span class="stack-item">Streamlit</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label">contact</div>
+    <div class="contact-row">
+      <a class="contact-item" href="mailto:zakir.ghouri.dev@gmail.com">zakir.ghouri.dev@gmail.com</a>
+      <a class="contact-item" href="https://github.com/mystic0137" target="_blank">github.com/mystic0137</a>
+      <a class="contact-item" href="tel:+917013898977">+91-7013898977</a>
+    </div>
+  </div>
+
+  <div style="color:var(--muted);font-size:11px;margin-top:1rem">Chennai, India · Open to remote / relocation</div>
+</div>
+<script>
+  document.getElementById('dl-btn').onclick = () => {
+    alert('Host your resume PDF and replace this with a direct download link.');
+  };
+</script>
