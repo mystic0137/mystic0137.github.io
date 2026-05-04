@@ -3,7 +3,7 @@
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
   :root{--green:#4af08a;--dimgreen:#2a7a4a;--bg:#0d0d0d;--surface:#111;--border:#1e1e1e;--text:#e0e0e0;--muted:#666;--mono:'JetBrains Mono',monospace}
-  .wrap{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;padding:2rem 1.5rem;max-width:860px;margin:0 auto;min-height:600px}
+  .wrap{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;padding:2rem 1.5rem;width:100%;max-width:none;margin:0;min-height:100vh;box-sizing:border-box}
   .prompt{color:var(--green);font-size:12px;margin-bottom:2rem;display:flex;align-items:center;gap:8px}
   .prompt::before{content:'>';color:var(--dimgreen)}
   .blink{display:inline-block;width:8px;height:14px;background:var(--green);animation:blink 1s step-end infinite;vertical-align:middle}
@@ -46,7 +46,7 @@
     <div class="hero-name">Zakirulla Khan Ghouri<span>_</span></div>
     <div class="hero-sub">
       <b>AI Engineer</b> — VIT Chennai CS/AI grad.<br>
-      Builds production ML systems with a focus on <b>inference efficiency</b>.<br>
+      I build production ML systems with a focus on <b>inference efficiency</b> and <b>memory fooprint</b>.<br>
       ONNX · FastAPI · RAG pipelines · LLM fine-tuning · Not demo-ware.
     </div>
     <div class="links">
