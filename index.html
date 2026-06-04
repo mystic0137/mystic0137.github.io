@@ -290,7 +290,7 @@
     <div class="hero-sub">
       <b>ML Systems & AI Engineer</b> — VIT Chennai CS/AI graduate.<br>
       Builds production-oriented GenAI and inference systems focused on <b>performance, reliability, and scalable deployment</b>.<br>
-      ONNX Runtime · FastAPI · RAG pipelines · Vectorized inference · LLM evaluation.
+      ONNX Runtime · FastAPI · RAG pipelines · Vectorized inference · LLM fine-tuning & evaluation.
     </div>
 
     <div class="links">
@@ -302,7 +302,7 @@
         [ Email Me ]
       </a>
 
-      <a class="link-btn" href="https://drive.usercontent.google.com/download?id=1ZrGcKsCIcrjw_QBvFNQZI_DdxE9m4qEK&export=download" target="_blank">
+      <a class="link-btn" href="https://drive.usercontent.google.com/download?id=153jq_m6oA9DTH_WZi7gaZfRxG2RXarOg&export=download" target="_blank">
         [ Download Resume ]
       </a>
     </div>
@@ -316,7 +316,7 @@
       <div class="focus-item">GenAI Infrastructure</div>
       <div class="focus-item">RAG Systems</div>
       <div class="focus-item">ML Serving</div>
-      <div class="focus-item">LLM Evaluation</div>
+      <div class="focus-item">LLM Fine-tuning & Evaluation</div>
       <div class="focus-item">Schema Validation</div>
       <div class="focus-item">Vectorized Processing</div>
       <div class="focus-item">Production ML Systems</div>
@@ -336,13 +336,13 @@
         </div>
 
         <div class="card-metric">
-          5–7× batch throughput improvement
+          5–7× faster batch inference · 82.3% ROC-AUC
         </div>
 
         <div class="card-desc">
-          Production-oriented lead prioritization and GenAI email system using <b>ONNX Runtime</b>, <b>FastAPI</b>, and <b>ChromaDB</b>. Built vectorized column-oriented inference APIs achieving significantly faster batch throughput than row-oriented execution.<br><br>
+          Production-oriented lead prioritization and GenAI email system using <b>XGBoost → ONNX Runtime</b>, <b>FastAPI</b>, and <b>ChromaDB</b>. Vectorized column-oriented inference scores leads ~5–7× faster than the row-oriented path (106ms → 15ms at 1k leads), with a singleton <b>MLState</b> sharing the ONNX session and embeddings across requests.<br><br>
 
-          Includes retrieval-augmented email generation, multi-provider LLM failover routing, RLHF-ready feedback logging, and fully air-gapped Docker deployment.
+          Includes a ChromaDB RAG pipeline grounded in 9 policy docs (<b>80% prompt-context reduction</b>), multi-provider LLM failover (Groq → Together → Ollama), RLHF-ready SFT/DPO feedback logging, and 160+ tests. Ships via multi-stage Docker with offline-capable inference — scoring and retrieval need no network; only LLM generation calls an external API (or a local Ollama fallback).
         </div>
 
         <div class="tag-row">
@@ -353,6 +353,7 @@
           <span class="tag">ChromaDB</span>
           <span class="tag">Sentence-Transformers</span>
           <span class="tag">Pydantic V2</span>
+          <span class="tag">Groq</span>
         </div>
 
         <div class="links" style="margin-top:12px">
@@ -367,30 +368,30 @@
 
         <div class="card-top">
           <div class="card-title">Prompt-to-PEFT</div>
-          <span class="badge complete">Complete</span>
+          <span class="badge complete">complete</span>
         </div>
 
         <div class="card-metric">
-          45.84% zero-shot accuracy ceiling identified
+          +28 pts held-out accuracy via QLoRA (43.4% → 71.4%)
         </div>
 
         <div class="card-desc">
-          Research-oriented LLM evaluation project investigating how prompt structure, instruction framing, and pretraining priors influence downstream classification behavior.<br><br>
+          Research-oriented LLM evaluation + PEFT project testing whether prompt failure modes can pinpoint exactly what fine-tuning should target. Ran controlled zero-shot/few-shot ablations across <b>Llama, Qwen, and Gemma</b> on 1,909 PubMed abstracts, validated with bootstrap CIs and McNemar + FDR on a cache-first, reproducible pipeline.<br><br>
 
-          Conducted controlled zero-shot and few-shot ablations on PubMed medical abstracts to isolate structural prompt effects from model prior bias before targeted LoRA/QLoRA fine-tuning.
+          Diagnosed a prior-driven failure prompting couldn't fix (Meta-analysis over-prediction), then closed the diagnose → tune → verify loop with a statistically-gated <b>QLoRA</b> fine-tune on Llama — held-out accuracy <b>43.4% → 71.4% (+28 pts)</b> on 8,169 unseen papers, macro-F1 0.41 → 0.72, McNemar p ≈ 0.
         </div>
 
         <div class="tag-row">
           <span class="tag">PyTorch</span>
           <span class="tag">LoRA / QLoRA</span>
           <span class="tag">PEFT</span>
-          <span class="tag">Llama-3.2-1B</span>
-          <span class="tag">Prompt Ablations</span>
+          <span class="tag">Llama / Qwen / Gemma</span>
+          <span class="tag">McNemar + FDR</span>
           <span class="tag">PubMed</span>
         </div>
 
         <div class="links" style="margin-top:12px">
-          <a class="link-btn" href="https://github.com/mystic0137/LLMFinetuning" target="_blank">
+          <a class="link-btn" href="https://github.com/mystic0137/LLM-finetuning" target="_blank">
             [ view repo ]
           </a>
         </div>
@@ -415,6 +416,7 @@
       <span class="stack-item">PEFT / LoRA / QLoRA</span>
       <span class="stack-item">Hugging Face</span>
       <span class="stack-item">Pydantic V2</span>
+      <span class="stack-item">scikit-learn</span>
       <span class="stack-item">Pandas</span>
       <span class="stack-item">NumPy</span>
     </div>
