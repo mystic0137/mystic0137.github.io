@@ -398,6 +398,40 @@
 
       </div>
 
+      <div class="card">
+
+        <div class="card-top">
+          <div class="card-title">Agentic Knowledge Graph Construction</div>
+          <span class="badge complete">complete</span>
+        </div>
+
+        <div class="card-metric">
+          Same 5-agent pipeline built twice — ADK vs. LangGraph, benchmarked head-to-head
+        </div>
+
+        <div class="card-desc">
+          Multi-agent system that constructs <b>Neo4j knowledge graphs</b> from mixed structured (CSV) and unstructured (Markdown / plain-text) data, modeling a furniture supply chain — products, assemblies, parts, suppliers, and customer reviews — so a bad review can be traced back to the responsible part and supplier for <b>root-cause analysis</b>. Five specialized agents handle user-intent, file proposal, NER/schema induction, fact extraction, and a propose → critique → retry <b>schema-refinement loop</b>.<br><br>
+
+          Reimplemented the <b>identical</b> pipeline in both <b>Google ADK and LangChain/LangGraph</b> over a framework-agnostic core (prompts, tools, state, Neo4j backend shared once), then proved equivalence — both emit identical work (<b>19 LLM calls / 15 tool calls / 2,622 tokens</b>) pinned by cross-framework tests. A deterministic offline mock mode isolates pure orchestration overhead, benchmarked across <b>cold-start, wall time, CPU, memory, and tokens</b> — quantifying ADK's <b>~3× heavier cold start</b> against near-parity steady-state.
+        </div>
+
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">Neo4j</span>
+          <span class="tag">Google ADK</span>
+          <span class="tag">LangChain / LangGraph</span>
+          <span class="tag">Multi-Agent Systems</span>
+          <span class="tag">LiteLLM</span>
+        </div>
+
+        <div class="links" style="margin-top:12px">
+          <a class="link-btn" href="https://github.com/mystic0137/knowledge_graph_agent" target="_blank">
+            [ view repo ]
+          </a>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
